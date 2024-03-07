@@ -3,28 +3,22 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {OfferDashboardSignalsComponent} from './components/offer-dashboard-signals/offer-dashboard-signals.component';
-import {MenuComponent} from './components/menu/menu.component';
-import {OfferCardComponent} from './components/offer-card/offer-card.component';
-import {
-  OfferDashboardFunctionComponent
-} from "./components/offer-dashboard-function/offer-dashboard-function.component";
-import {
-  OfferDashboardSubjectsComponent
-} from "./components/offer-dashboard-subjects/offer-dashboard-subjects.component";
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OfferDashboardSignalsComponent,
-    OfferDashboardFunctionComponent,
-    OfferDashboardSubjectsComponent,
-    MenuComponent,
-    OfferCardComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    NgxDaterangepickerMd.forRoot(
+      {
+        separator: ' - ',
+        applyLabel: 'Okay',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

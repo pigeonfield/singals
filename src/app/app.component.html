@@ -1,12 +1,32 @@
-<div class="menu-main-container">
-  <app-menu></app-menu>
+
+
+<div class="fx-date-range-container">
+  <span class="summary">SELECT DATE & TIME</span>
+  <input
+    class="fx-date-range"
+    type="text"
+    matInput
+    ngxDaterangepickerMd
+    [timePicker]="true"
+    [locale]="{ applyLabel: 'ok', format: 'MM/DD/YY' }"
+    [drops]="'down'"
+    [opens]="'right'"
+    [ranges]="ranges"
+    [showCustomRangeLabel]="false"
+    [alwaysShowCalendars]="true"
+    [keepCalendarOpeningWithRange]="true"
+    [showCancel]="true"
+    autocomplete="off"
+    (datesUpdated)="onChange($event)"
+    [(ngModel)]="selectedDateRange"
+  />
 </div>
 
-
-<!--Możemy tutaj wykorzystać różne podejścia.
-    Możliwe komponenty:
-    app-offer-dashboard-function
-    app-offer-dashboard-subjects
-    app-offer-dashboard-signals
-  -->
-<app-offer-dashboard-signals></app-offer-dashboard-signals>
+<div>
+  <p> SELECTED START DATE:</p>
+  <span>{{ selectedValue?.startDate }} </span>
+</div>
+<div>
+  <p> SELECTED END DATE:</p>
+  <span>{{ selectedValue?.endDate }} </span>
+</div>
